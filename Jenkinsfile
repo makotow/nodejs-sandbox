@@ -1,7 +1,5 @@
 pipeline {
-    def label = "mypod-${UUID.randomUUID().toString()}"
-
-    agent agent {
+    agent  {
         kubernetes {
             yamlFile './KubernetesPod.yaml'
         }
