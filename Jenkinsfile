@@ -1,7 +1,9 @@
 pipeline {
-    agent  {
+    agent {
         kubernetes {
-            yamlFile './KubernetesPod.yaml'
+          label 'jenkins-ci'
+          defaultContainer 'jnlp'
+          yamlFile 'KubernetesPod.yaml'
         }
     }
     // environment { 
