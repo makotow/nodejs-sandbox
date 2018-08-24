@@ -20,6 +20,7 @@ spec:
     command:
     - cat
     tty: true
+    env:
     - name: CONTAINER_ENV_VAR
       value: docker
   - name: kubectl
@@ -27,6 +28,7 @@ spec:
     command:
     - cat
     tty: true
+    env:
     - name: CONTAINER_ENV_VAR
       value: kubectl
   - name: helm
@@ -34,5 +36,6 @@ spec:
     command: 
     - cat
     tty: true
+    env:
     - name: CONTAINER_ENV_VAR
       value: helm
