@@ -4,14 +4,12 @@ pipeline {
             yamlFile './KubernetesPod.yaml'
         }
     }
-    environment { 
-        // global environment variables.
-    }
+    // environment { 
+    //     // global environment variables.
+    // }
     stages {
         
         stage('Pre Build Check') {
-            environment { 
-            }
             steps {
                 script {
                     echo "Pre Build staget implement!"
@@ -22,9 +20,6 @@ pipeline {
             }
         }
         stage('Build') {
-            environment { 
-                // Credentials
-            }
             steps {
                 echo "Build staget implement!"
                 container('docker') {
@@ -33,9 +28,6 @@ pipeline {
             }
         }
         stage('Test') {
-            environment { 
-                // Environemtn variable for testing.
-            }
             steps {
                 echo 'Test Stage implement!'
                 container('kubectl') {
@@ -44,9 +36,6 @@ pipeline {
             }
         } 
         stage('Deploy') {
-            environment { 
-
-            }
             steps {
                 echo 'printenv'
                 container('helm') {
