@@ -6,9 +6,7 @@ pipeline {
           yamlFile 'KubernetesPod.yaml'
         }
     }
-    // environment { 
-    //     // global environment variables.
-    // }
+
     stages {
         
         stage('Pre Build Check') {
@@ -21,13 +19,13 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
-            steps {
-                echo "Build staget implement!"
-                container('docker') {
-                    sh 'docker version'
-                }
-            }
+        // stage('Build') {
+        //     steps {
+        //         echo "Build staget implement!"
+        //         container('docker') {
+        //             sh 'docker version'
+        //         }
+        //     }
         }
         stage('Test') {
             steps {
