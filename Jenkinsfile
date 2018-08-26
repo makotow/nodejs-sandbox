@@ -26,7 +26,7 @@ pipeline {
         //             sh 'docker version'
         //         }
         //     }
-        }
+        // }
         stage('Test') {
             steps {
                 echo 'Test Stage implement!'
