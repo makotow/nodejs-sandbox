@@ -19,14 +19,17 @@ pipeline {
                 }
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         echo "Build staget implement!"
-        //         container('docker') {
-        //             sh 'docker version'
-        //         }
-        //     }
-        // }
+
+        stage('Build') {
+            steps {
+                echo "Build staget implement!"
+            
+                docker.build("nodejs-build-${env.BUILD_ID}", "-f Dockerfile .").inside() {
+                    node -v
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 echo 'Test Stage implement!'
@@ -35,6 +38,7 @@ pipeline {
                 }
             }
         } 
+
         stage('Deploy') {
             steps {
                 echo 'printenv'

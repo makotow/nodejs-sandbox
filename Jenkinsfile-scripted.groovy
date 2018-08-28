@@ -37,7 +37,7 @@ volumes: [
 
         sh "docker version"
         
-        //　以下のようなイメージでビルド、イメージ登録を以下のようなイメージで実施
+        //　以下のようなイメージでビルド、イメージ登録を以下の流れで実施。
         // withCredentials([[$class: 'UsernamePasswordMultiBinding',
         //   credentialsId: 'dockerhub',
         //   usernameVariable: 'DOCKER_HUB_USER',

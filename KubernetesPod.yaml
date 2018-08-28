@@ -15,14 +15,6 @@ spec:
     env:
     - name: CONTAINER_ENV_VAR
       value: busybox
-  - name: docker
-    image: docker
-    command:
-    - cat
-    tty: true
-    env:
-    - name: CONTAINER_ENV_VAR
-      value: docker
   - name: kubectl
     image: lachlanevenson/k8s-kubectl:v1.8.8
     command:
