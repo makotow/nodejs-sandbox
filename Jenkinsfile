@@ -23,9 +23,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Build staget implement!"
-            
-                docker.build("nodejs-build-${env.BUILD_ID}", "-f Dockerfile .").inside() {
-                    node -v
+                script {
+                    docker.build("nodejs-build-${env.BUILD_ID}").inside() {
+                        node -v
+                    }
                 }
             }
         }
